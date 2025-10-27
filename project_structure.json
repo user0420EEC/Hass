@@ -1,11 +1,15 @@
 {
   "project_name": "Home Assistant Configuration",
   "repository": "",
-  "generated": "2025-10-27T10:51:18.571931+00:00",
+  "generated": "2025-10-27T11:02:43.706978+00:00",
   "root": {
     "generate_structure.py": {
       "type": "file",
       "description": "Python модуль/скрипт."
+    },
+    "project_structure.json": {
+      "type": "file",
+      "description": "JSON конфигурация/данные."
     },
     "README.md": {
       "type": "file"
@@ -16,6 +20,11 @@
       "path": "generate_structure.py",
       "type": "file",
       "description": "Python модуль/скрипт."
+    },
+    {
+      "path": "project_structure.json",
+      "type": "file",
+      "description": "JSON конфигурация/данные."
     },
     {
       "path": "README.md",
