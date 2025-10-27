@@ -1,0 +1,21 @@
+name: Auto-generate project_structure.json
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  update-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python generate_structure.py
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add project_structure.json
+          git commit -m "ci: auto-update project_structure.json" || echo "No changes"
+          git push
