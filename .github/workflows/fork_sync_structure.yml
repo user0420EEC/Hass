@@ -1,0 +1,49 @@
+name: Clone upstream and generate project_structure.json
+
+permissions:
+  contents: write
+  actions: read
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # ежедневно 03:00 UTC
+  workflow_dispatch:       # ручной запуск
+
+env:
+  UPSTREAM_REPO: vitalgolikov/hass      # что клонируем (read-only)
+  TARGET_BRANCH: main                   # куда коммитим в своем форке
+
+jobs:
+  sync-and-generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your fork
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Clone upstream repo
+        run: |
+          git clone --depth 1 https://github.com/${{ env.UPSTREAM_REPO }}.git upstream_repo
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run generator on upstream tree
+        run: |
+          cp generate_structure.py upstream_repo/
+          cd upstream_repo
+          python generate_structure.py
+          cp project_structure.json ../project_structure.json
+
+      - name: Commit result to your fork
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add project_structure.json
+          git commit -m "ci: update project_structure.json from upstream ${{ env.UPSTREAM_REPO }}" || echo "No changes"
+          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ env.TARGET_BRANCH }}
