@@ -1,0 +1,39 @@
+{
+  "project_name": "Home Assistant Configuration",
+  "repository": "",
+  "generated": "2025-10-27T10:51:18.571931+00:00",
+  "root": {
+    "generate_structure.py": {
+      "type": "file",
+      "description": "Python модуль/скрипт."
+    },
+    "README.md": {
+      "type": "file"
+    }
+  },
+  "files": [
+    {
+      "path": "generate_structure.py",
+      "type": "file",
+      "description": "Python модуль/скрипт."
+    },
+    {
+      "path": "README.md",
+      "type": "file"
+    }
+  ],
+  "files_index": {},
+  "yaml_includes": {},
+  "relations": {},
+  "usage_rules": {
+    "model_behavior": "Использовать этот JSON как источник истины по структуре. Не выдумывать файлы/сущности вне карты.",
+    "rules": [
+      "ESPHome → /esphome/",
+      "Zigbee → /zigbee2mqtt/",
+      "Автоматизации → /blueprints/ и/или includes/automations.yaml",
+      "Кастомизация → customize.yaml",
+      "Главные настройки → configuration.yaml",
+      "При ссылках на файлы указывать относительные пути"
+    ]
+  }
+}
