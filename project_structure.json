@@ -1,7 +1,7 @@
 {
   "project_name": "Home Assistant Configuration",
   "repository": "",
-  "generated": "2025-10-27T11:42:56.395164+00:00",
+  "generated": "2025-10-28T03:42:01.217007+00:00",
   "root": {
     ".gitignore": {
       "type": "file"
@@ -11302,7 +11302,22 @@
       "description": "Shell-скрипт."
     },
     {
+      "path": "includes/automations/curtains_automation.yaml",
+      "type": "file",
+      "description": "Подключаемые части конфигурации (sensors, switches и т.п.)."
+    },
+    {
+      "path": "includes/automations/gitpush_nightly.yaml",
+      "type": "file",
+      "description": "Подключаемые части конфигурации (sensors, switches и т.п.)."
+    },
+    {
       "path": "includes/automations/hass_start_tasks.yaml",
+      "type": "file",
+      "description": "Подключаемые части конфигурации (sensors, switches и т.п.)."
+    },
+    {
+      "path": "includes/automations/su_fix.yaml",
       "type": "file",
       "description": "Подключаемые части конфигурации (sensors, switches и т.п.)."
     },
@@ -11419,6 +11434,10 @@
       "scenes.yaml",
       "scripts.yaml",
       "themes"
+    ],
+    "includes/automations/gitpush_nightly.yaml": [
+      "includes/automations",
+      "каждый"
     ]
   },
   "relations": {
@@ -11430,6 +11449,10 @@
       "scenes.yaml",
       "scripts.yaml",
       "themes"
+    ],
+    "includes/automations/gitpush_nightly.yaml": [
+      "includes/automations",
+      "каждый"
     ]
   },
   "usage_rules": {
