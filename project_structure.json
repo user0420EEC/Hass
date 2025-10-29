@@ -1,7 +1,7 @@
 {
   "project_name": "Home Assistant Configuration",
   "repository": "",
-  "generated": "2025-10-28T03:42:01.217007+00:00",
+  "generated": "2025-10-29T03:49:30.230490+00:00",
   "root": {
     ".gitignore": {
       "type": "file"
@@ -11317,6 +11317,11 @@
       "description": "Подключаемые части конфигурации (sensors, switches и т.п.)."
     },
     {
+      "path": "includes/automations/notify_critical_humidity.yaml",
+      "type": "file",
+      "description": "Подключаемые части конфигурации (sensors, switches и т.п.)."
+    },
+    {
       "path": "includes/automations/su_fix.yaml",
       "type": "file",
       "description": "Подключаемые части конфигурации (sensors, switches и т.п.)."
@@ -11353,6 +11358,11 @@
     },
     {
       "path": "includes/packages/kuhnya_diod_swich_PLC_sync.yaml",
+      "type": "file",
+      "description": "Подключаемые части конфигурации (sensors, switches и т.п.)."
+    },
+    {
+      "path": "includes/packages/night_lestnica.yaml",
       "type": "file",
       "description": "Подключаемые части конфигурации (sensors, switches и т.п.)."
     },
@@ -11438,6 +11448,9 @@
     "includes/automations/gitpush_nightly.yaml": [
       "includes/automations",
       "каждый"
+    ],
+    "includes/packages/night_lestnica.yaml": [
+      "нужен"
     ]
   },
   "relations": {
@@ -11453,6 +11466,9 @@
     "includes/automations/gitpush_nightly.yaml": [
       "includes/automations",
       "каждый"
+    ],
+    "includes/packages/night_lestnica.yaml": [
+      "нужен"
     ]
   },
   "usage_rules": {
