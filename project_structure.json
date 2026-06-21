@@ -1,7 +1,7 @@
 {
   "project_name": "Home Assistant Configuration",
   "repository": "",
-  "generated": "2026-06-20T07:03:03.800633+00:00",
+  "generated": "2026-06-21T08:03:00.780603+00:00",
   "root": {
     ".gitignore": {
       "type": "file"
